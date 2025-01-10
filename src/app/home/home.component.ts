@@ -23,12 +23,50 @@ ngOnInit(): void {
   this.getProducts();
 }
 
-getProducts() {
-  this.homeService.getProducts().subscribe({
-    next: response => {
-      this.products = response;
-    }
-  })
+// getProducts() {
+//   this.homeService.getProducts().subscribe({
+//     next: response => {
+//       this.products = response;
+//     }
+//   })
+// }
+
+getProducts(){
+  this.products = [
+    {
+      id: 1,
+      brand: 'Chanel',
+      name: 'Coco Mademoiselle',
+      perfumeType: 'Eau de Parfum',
+      size: 50,
+      container: 'Bottle',
+      gender: 'Female',
+      priceInDollar: 120,
+      priceInRub: 9000,
+      photoPath: 'hero1.jpg',
+      quantity: 10,
+      isHit: true,
+      isNew: false
+    },
+    {
+      id: 2,
+      brand: 'Dior',
+      name: 'Sauvage',
+      perfumeType: 'Eau de Toilette',
+      size: 100,
+      container: 'Bottle',
+      gender: 'Male',
+      priceInDollar: 95,
+      priceInRub: 7500,
+      photoPath: 'hero2.jpg',
+      quantity: 15,
+      isHit: false,
+      isNew: true
+    },
+   
+  ];
+
+  console.log(this.products);
 }
 }
 

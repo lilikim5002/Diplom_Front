@@ -17,6 +17,13 @@ import { ShopRoutingModule } from './shop-routing.module';
     CommonModule,
     SharedModule,
     ShopRoutingModule
+  ],
+
+  exports:[
+    ShopComponent,
+    ProductItemComponent,
+    ProductDetailsComponent
   ]
+
 })
 export class ShopModule { }

@@ -25,25 +25,43 @@ export class ProductDetailsComponent implements OnInit {
     this.loadProduct();
   }
 
-  loadProduct() {
-    const id = this.activatedRoute.snapshot.paramMap.get('id');
-    if (id) this.shopService.getProduct(+id).subscribe({
-      next: product => {
-        this.product = product;
-        this.bcService.set('@productDetails', product.name);
-        this.basketService.basketSource$.pipe(take(1)).subscribe({
-          next: basket => {
-            const item = basket?.items.find(x => x.id === +id);
-            if (item) {
-              this.quantity = item.quantity;
-              this.quantityInBasket = item.quantity;
-            }
-          }
-        })
-      },
-      error: error => console.log(error)
-    })
-  }
+  loadProduct(){
+    this.product = 
+      {
+        id: 1,
+        brand: 'Chanel',
+        name: 'Coco Mademoiselle',
+        perfumeType: 'Eau de Parfum',
+        size: 50,
+        container: 'Bottle',
+        gender: 'Female',
+        priceInDollar: 120,
+        priceInRub: 9000,
+        photoPath: '1.jpg',
+        quantity: 10,
+        isHit: true,
+        isNew: false
+      }}
+
+  // loadProduct() {
+  //   const id = this.activatedRoute.snapshot.paramMap.get('id');
+  //   if (id) this.shopService.getProduct(+id).subscribe({
+  //     next: product => {
+  //       this.product = product;
+  //       this.bcService.set('@productDetails', product.name);
+  //       this.basketService.basketSource$.pipe(take(1)).subscribe({
+  //         next: basket => {
+  //           const item = basket?.items.find(x => x.id === +id);
+  //           if (item) {
+  //             this.quantity = item.quantity;
+  //             this.quantityInBasket = item.quantity;
+  //           }
+  //         }
+  //       })
+  //     },
+  //     error: error => console.log(error)
+  //   })
+  // }
 
   incrementQuantity() {
     this.quantity++;
@@ -68,7 +86,7 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   get buttonText() {
-    return this.quantityInBasket === 0 ? 'Add to basket' : 'Update basket';
+    return this.quantityInBasket === 0 ? 'Добавить' : 'Убрать';
   }
 
 }

@@ -1,14 +1,19 @@
 <div class="container">
-    <div class="row" *ngIf="product">
+    <div class="row " *ngIf="product">
         <div class="col-6">
-            <img src="{{product.photoPath}}" alt="{{product.name}}" class="w-100">
+            <img src="http://localhost:4200/assets/images/{{product.photoPath}}" alt="{{product.name}}" class="w-100">
         </div>
         <div class="col-6 mt-5">
             <h2>{{product.name}}</h2>
-            <p style="font-size: 2em;">{{product.priceInDollar | currency}}</p>
+            <p style="font-size: 2em;">{{product.priceInDollar | currency}} / {{product.priceInRub | currency:'RUB':'symbol-narrow'}}</p>
+
+            <p style="font-size: 1em;">Упаковка: {{product.container}}</p>
+            <p style="font-size: 1em;">Упаковка: {{product.gender}}</p>
+            <p style="font-size: 1em;">Описание: {{product.perfumeType}}</p>
+            <p style="font-size: 1em;">Размер: {{product.size}} мл.</p>
 
             <h5 class="text-primary mb-3" *ngIf="quantityInBasket > 0">
-                You have {{quantityInBasket}} of this item in your basket
+                Вы добавили {{quantityInBasket}} в корзину
             </h5>
 
             <div class="d-flex justify-content-start align-items-center">

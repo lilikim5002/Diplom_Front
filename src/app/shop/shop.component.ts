@@ -14,53 +14,7 @@ import { HomeService } from '../home/home.service';
 
 export class ShopComponent implements OnInit {
   @ViewChild('search') searchTerm?: ElementRef;
-  products: Product[] = [
-    {
-      id: 1,
-      brand: 'Chanel',
-      name: 'Coco Mademoiselle',
-      perfumeType: 'Eau de Parfum',
-      size: 50,
-      container: 'Bottle',
-      gender: 'Female',
-      priceInDollar: 120,
-      priceInRub: 9000,
-      photoPath: 'hero1.jpg',
-      quantity: 10,
-      isHit: true,
-      isNew: false
-    },
-    {
-      id: 2,
-      brand: 'Dior',
-      name: 'Sauvage',
-      perfumeType: 'Eau de Toilette',
-      size: 100,
-      container: 'Bottle',
-      gender: 'Male',
-      priceInDollar: 95,
-      priceInRub: 7500,
-      photoPath: 'hero2.jpg',
-      quantity: 15,
-      isHit: false,
-      isNew: true
-    },
-     {
-      id:3,
-      brand: 'Gucci',
-      name: 'Bloom',W-
-      perfumeType: 'Eau de Parfum',
-      size: 75,
-      container: 'Bottle',
-      gender: 'Female',
-      priceInDollar: 110,
-      priceInRub: 8500,
-      photoPath: 'hero3.jpg',
-      quantity: 8,
-      isHit: true,
-      isNew: true
-    }
-  ];
+  products: Product[] = [];
   brands: Brand[] = [];
   types: Type[] = [];
   shopParams: ShopParams;
@@ -81,15 +35,69 @@ export class ShopComponent implements OnInit {
     // this.getTypes();
   }
 
-  getProducts() {
-    console.log('Получение духов')
-    this.homeService.getProducts().subscribe({
-      next: response => {
-        this.products = response,
-        console.log(this.products)
+  // getProducts() {
+  //   console.log('Получение духов')
+  //   this.homeService.getProducts().subscribe({
+  //     next: response => {
+  //       this.products = response,
+  //       console.log(this.products)
+  //     },
+  //     error: error => console.log(error)
+  //   })
+  // }
+
+  getProducts(){
+    this.products = [
+      {
+        id: 1,
+        brand: 'Chanel',
+        name: 'Coco Mademoiselle',
+        perfumeType: 'Eau de Parfum',
+        size: 50,
+        container: 'Bottle',
+        gender: 'Female',
+        priceInDollar: 120,
+        priceInRub: 9000,
+        photoPath: '1.jpg',
+        quantity: 10,
+        isHit: true,
+        isNew: false
       },
-      error: error => console.log(error)
-    })
+      {
+        id: 2,
+        brand: 'Dior',
+        name: 'Sauvage',
+        perfumeType: 'Eau de Toilette',
+        size: 100,
+        container: 'Bottle',
+        gender: 'Male',
+        priceInDollar: 95,
+        priceInRub: 7500,
+        photoPath: '2.jpg',
+        quantity: 15,
+        isHit: false,
+        isNew: true
+      },
+
+      {
+        id: 2,
+        brand: 'Dior',
+        name: 'Sauvage',
+        perfumeType: 'Eau de Toilette',
+        size: 100,
+        container: 'Bottle',
+        gender: 'Male',
+        priceInDollar: 95,
+        priceInRub: 7500,
+        photoPath: '2.jpg',
+        quantity: 15,
+        isHit: true,
+        isNew: true
+      },
+     
+    ];
+  
+    console.log(this.products);
   }
 
   getBrands() {

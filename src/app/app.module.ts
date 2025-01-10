@@ -11,6 +11,7 @@ import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
 import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { OrderDetailedComponent } from './order-detailed/order-detailed.component';
+import { ShopModule } from './shop/shop.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { OrderDetailedComponent } from './order-detailed/order-detailed.componen
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    
+    ShopModule,
     CoreModule,
     HomeModule
   ],

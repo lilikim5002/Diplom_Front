@@ -8,11 +8,13 @@ import { Product } from 'src/app/shared/models/product';
   styleUrls: ['./product-item.component.scss']
 })
 export class ProductItemComponent {
-  @Input() product?: Product;
+  @Input() product!: Product;
 
-  constructor(private basketService: BasketService) {}
+  constructor() {
+    console.log('Constructor called');
+  }
 
-  addItemToBasket() {
-    // this.product && this.basketService.addItemToBasket(this.product);
+  ngOnInit() {
+    console.log('Received product in child:', this.product);
   }
 }
