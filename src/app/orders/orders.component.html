@@ -4,10 +4,9 @@
             <table class="table table-hover" style="cursor: pointer;">
                 <thead class="thead-light">
                     <tr>
-                        <th>Order</th>
-                        <th>Date</th>
-                        <th>Total</th>
-                        <th>Status</th>
+                        <th>Заказ</th>
+                        <th>Дата</th>
+                        <th>Сумма</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -15,7 +14,6 @@
                         <th># {{order.id}}</th>
                         <td>{{order.orderDate | date: 'medium'}}</td>
                         <td>{{order.total | currency}}</td>
-                        <td>{{order.status}}</td>
                     </tr>
                 </tbody>
             </table>

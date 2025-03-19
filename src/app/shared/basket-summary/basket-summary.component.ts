@@ -11,6 +11,7 @@ export class BasketSummaryComponent {
   @Output() addItem = new EventEmitter<BasketItem>();
   @Output() removeItem = new EventEmitter<{id: number, quantity: number}>();
   @Input() isBasket = true;
+  
 
   constructor(public basketService: BasketService) {}
 

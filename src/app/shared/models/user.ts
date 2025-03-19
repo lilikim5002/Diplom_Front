@@ -1,14 +1,17 @@
 export interface User {
-    telegram: string;
-    displayName: string;
-    token: string;
+  telegram: string;
+  displayName: string;
+  token: string;
+  phoneNumber: string;
 }
 
 export interface Address {
-    firstName: string;
-    lastName: string;
-    street: string;
-    city: string;
-    state: string;
-    zipcode: string;
+  [x: string]: string;
+  firstName: string;
+  lastName: string;
+  street: string;
+  city: string;
+  state: string;
+  zipcode: string;
+  phoneNumber: string;
 }
