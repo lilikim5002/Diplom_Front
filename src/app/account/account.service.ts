@@ -48,6 +48,7 @@ export class AccountService {
     if (values.phoneNumber === '+71234567890' && values.password === 'test') {
       localStorage.setItem('token', 'mock-token');
       this.currentUserSource.next(this.mockUser);
+      this.router.navigateByUrl('/home');
       return of(this.mockUser);
     }
 
@@ -55,7 +56,7 @@ export class AccountService {
       map((user) => {
         localStorage.setItem('token', user.token);
         this.currentUserSource.next(user);
-        this.router.navigateByUrl('/');
+        this.router.navigateByUrl('/home');
         return user;
       })
     );
@@ -85,12 +86,12 @@ export class AccountService {
   logout() {
     localStorage.removeItem('token');
     this.currentUserSource.next(null);
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/login');
   }
 
-  checkEmailExists(email: string) {
+  checkTgExists(telegram: string) {
     return this.http.get<boolean>(
-      this.baseUrl + 'account/emailExists?email=' + email
+      this.baseUrl + 'account/telegramExists?telegram=' + telegram
     );
   }
 

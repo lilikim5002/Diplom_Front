@@ -12,7 +12,7 @@ export class BasketComponent {
   constructor(public basketService: BasketService) {}
 
   incrementQuantity(item: BasketItem) {
-    // this.basketService.addItemToBasket(item);
+    this.basketService.addItemToBasket(item);
     
   }
 
