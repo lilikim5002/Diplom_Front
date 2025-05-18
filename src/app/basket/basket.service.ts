@@ -122,11 +122,11 @@ export class BasketService {
     return {
       id: item.id,
       productName: item.name,
-      price: item.priceInDollar,
+      price: item.price,
       quantity: 0,
-      pictureUrl: item.photoPath,
+      pictureUrl: item.pictureUrl,
       brand: item.brand,
-      type: item.perfumeType,
+      type: item.type,
     };
   }
 

@@ -55,49 +55,34 @@ export class ShopComponent implements OnInit {
     this.products = [
       {
         id: 1,
-        brand: 'Chanel',
-        name: 'Coco Mademoiselle',
-        perfumeType: 'Eau de Parfum',
-        size: 50,
-        container: 'Bottle',
-        gender: 'Female',
-        priceInDollar: 120,
-        priceInRub: 9000,
-        photoPath: '1.jpg',
-        quantity: 10,
-        isHit: true,
-        isNew: false,
+        name: 'Белая ваза',
+        description: 'Описание',
+        price: 1000,
+        pictureUrl: '1.jpg',
+        MyProperty: 'Текст',
+        brand: 'Textura',
+        type: 'Ваза',
       },
       {
-        id: 2,
-        brand: 'Dior',
-        name: 'Sauvage',
-        perfumeType: 'Eau de Toilette',
-        size: 100,
-        container: 'Bottle',
-        gender: 'Male',
-        priceInDollar: 95,
-        priceInRub: 7500,
-        photoPath: '2.jpg',
-        quantity: 15,
-        isHit: false,
-        isNew: true,
+        id: 1,
+        name: 'Белая ваза',
+        description: 'Описание',
+        price: 1000,
+        pictureUrl: '2.jpg',
+        MyProperty: 'Текст',
+        brand: 'Textura',
+        type: 'Ваза',
       },
 
       {
-        id: 2,
-        brand: 'Dior',
-        name: 'Sauvage',
-        perfumeType: 'Eau de Toilette',
-        size: 100,
-        container: 'Bottle',
-        gender: 'Male',
-        priceInDollar: 95,
-        priceInRub: 7500,
-        photoPath: '2.jpg',
-        quantity: 15,
-        isHit: true,
-        isNew: true,
+        id: 1,
+        name: 'Белая ваза',
+        description: 'Описание',
+        price: 1000,
+        pictureUrl: '3.jpg',
+        MyProperty: 'Текст',
+        brand: 'Textura',
+        type: 'Ваза',
       },
     ];
     this.applyFilters();
@@ -122,7 +107,7 @@ export class ShopComponent implements OnInit {
     // Фильтр по типу
     if (this.shopParams.typeId > 0) {
       filteredProducts = filteredProducts.filter((p) =>
-        p.perfumeType
+        p.type
           .toLowerCase()
           .includes(
             this.types
@@ -148,21 +133,21 @@ export class ShopComponent implements OnInit {
         filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
         break;
       case 'male':
-        filteredProducts = filteredProducts.filter((p) => p.gender === 'Male');
+        filteredProducts = filteredProducts.filter((p) => p.type === 'Male');
         break;
       case 'female':
         filteredProducts = filteredProducts.filter(
-          (p) => p.gender === 'Female'
+          (p) => p.type === 'Female'
         );
         break;
       case 'unisex':
         filteredProducts = filteredProducts.filter(
-          (p) => p.gender === 'Unisex'
+          (p) => p.type === 'Unisex'
         );
         break;
       case 'tester':
         filteredProducts = filteredProducts.filter(
-          (p) => p.container === 'Tester'
+          (p) => p.brand === 'Tester'
         );
         break;
     }
@@ -187,11 +172,12 @@ export class ShopComponent implements OnInit {
   getTypes() {
     if (this.types.length > 0) return of(this.types);
   
+    
     // Временные данные для тестирования
     const type = [
-      { id: 1, name: 'апро' },
-      { id: 2, name: 'Eau de Toilette' },
-      { id: 3, name: 'Parfum' }
+      { id: 1, name: 'Вазы' },
+      { id: 2, name: 'Кружки' },
+      { id: 3, name: 'Тарелки' }
     ];
     
     this.types = [...type, { id: 0, name: 'Все' }];

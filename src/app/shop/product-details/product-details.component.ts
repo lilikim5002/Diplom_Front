@@ -16,6 +16,7 @@ export class ProductDetailsComponent implements OnInit {
   quantity = 1;
   quantityInBasket = 0;
 
+
   constructor(private shopService: ShopService, private activatedRoute: ActivatedRoute, 
     private bcService: BreadcrumbService, private basketService: BasketService) {
       this.bcService.set('@productDetails', ' ')
@@ -29,18 +30,13 @@ export class ProductDetailsComponent implements OnInit {
     this.product = 
       {
         id: 1,
-        brand: 'Chanel',
-        name: 'Coco Mademoiselle',
-        perfumeType: 'Eau de Parfum',
-        size: 50,
-        container: 'Bottle',
-        gender: 'Female',
-        priceInDollar: 120,
-        priceInRub: 9000,
-        photoPath: '1.jpg',
-        quantity: 10,
-        isHit: true,
-        isNew: false
+        name: 'Белая ваза',
+        description: 'Описание',
+        price: 1000,
+        pictureUrl: '1.jpg',
+        MyProperty: 'Текст',
+        brand: 'Textura',
+        type: 'Ваза',
       }}
 
   // loadProduct() {
@@ -76,7 +72,7 @@ export class ProductDetailsComponent implements OnInit {
       if (this.quantity > this.quantityInBasket) {
         const itemsToAdd = this.quantity - this.quantityInBasket;
         this.quantityInBasket += itemsToAdd;
-        // this.basketService.addItemToBasket(this.product, itemsToAdd);
+        this.basketService.addItemToBasket(this.product, itemsToAdd);
       } else {
         const itemsToRemove = this.quantityInBasket - this.quantity;
         this.quantityInBasket -= itemsToRemove;
