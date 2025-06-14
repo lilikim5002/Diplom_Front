@@ -3,7 +3,7 @@
   }
   
   .my-custom-button-color {
-    background-color: blue;
+    background-color: rgb(180, 127, 54);
     color: white;
   }
   
@@ -48,7 +48,7 @@
   }
   
   .bg-primary-500 {
-    background-color: #94adf6;
+    background-color: #eba759;
   }
   
   .text-primary-50 {
@@ -136,9 +136,9 @@
   }
   
   img { /* Стили для изображения */
-    max-width: 150px; /*  добавьте максимальную ширину */
-    max-height: 100px; /*  добавьте максимальную высоту */
+    max-width:100%; /*  добавьте максимальную ширину */
+    max-height:100%; /*  добавьте максимальную высоту */
     object-fit: contain;  /*  установите object-fit */
-    border-radius: 0.375rem;
+    border-radius: 30px;
     margin-bottom: 0; /* Уберите отступ снизу */
   }

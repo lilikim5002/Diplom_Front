@@ -1,11 +1,11 @@
 <div class="container mt-5">
   <div *ngIf="(basketService.basketSource$ | async) === null">
-    <p>There are no items in your basket</p>
+    <p>Пусто</p>
   </div>
 
-  <!-- *ngIf="(basketService.basketSource$ | async) as basket" -->
-  <ng-container>
-    <div class="container">
+  
+  <ng-container *ngIf="(basketService.basketSource$ | async) as basket">
+    <div class="container mt-5">
       <div class="row">
         <app-basket-summary
           (addItem)="incrementQuantity($event)"
@@ -18,7 +18,7 @@
           <app-order-totals></app-order-totals>
           <div class="d-grid">
             <a routerLink="/checkout" class="btn btn-outline-primary py-2">
-              Проверка заказа
+              ОФОРМИТЬ
             </a>
           </div>
         </div>

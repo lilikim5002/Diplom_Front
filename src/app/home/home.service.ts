@@ -14,10 +14,10 @@ export class HomeService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.baseUrl + 'Products').pipe(
+  getProducts(): Observable<any> {
+    return this.http.get<any>(this.baseUrl + 'Products').pipe(
         map(response => {
-          this.products = response;
+          this.products = response.data;
           return response;
       })
     )

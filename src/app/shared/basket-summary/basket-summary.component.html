@@ -4,9 +4,9 @@
             <tr>
                 <th><div class="py-2">Товар</div></th>
                 <th><div class="py-2">Цена</div></th>
-                <th [class.text-center]="!isBasket"><div class="py-2">Quantit</div></th>
-                <th><div class="py-2">Total</div></th>
-                <th *ngIf="isBasket"><div class="py-2">Remove</div></th>
+                <th [class.text-center]="!isBasket"><div class="py-2">Количество</div></th>
+                <th><div class="py-2">Итог</div></th>
+                <th *ngIf="isBasket"><div class="py-2">Удалить</div></th>
             </tr>
         </thead>
         <tbody>
@@ -25,7 +25,7 @@
                                 </a>
                             </h5>
                             <span class="text-muted fst-italic">
-                                Type: {{item.type}}
+                                Тип: {{item.type}}
                             </span>
                         </div>
                     </div>
