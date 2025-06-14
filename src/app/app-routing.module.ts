@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'test-error', component: TestErrorComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: 'server-error', component: ServerErrorComponent },
-  { path: 'Ⓑ', redirectTo: 'not-found', pathMatch: 'full' } // Обработка всех остальных несопоставленных маршрутов
+  { path: 'Ⓑ', redirectTo: 'not-found', pathMatch: 'full' } 
 ];
 
 @NgModule({

@@ -1,9 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
-import { environment } from 'src/environments/environment';
-import { DeliveryMethod } from '../shared/models/deliveryMethod';
-import { Order, OrderToCreate } from '../shared/models/order';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
+import { Order } from '../shared/models/order';
 
 @Injectable({
   providedIn: 'root'
@@ -13,15 +11,7 @@ export class CheckoutService {
 
   constructor(private http: HttpClient) { }
 
-  createOrder(order: OrderToCreate) {
+  createOrder(order: any) {
     return this.http.post<Order>(this.baseUrl + 'orders', order);
-  }
-
-  getDeliveryMethods() {
-    return this.http.get<DeliveryMethod[]>(this.baseUrl + 'orders/deliveryMethods').pipe(
-      map(dm => {
-        return dm.sort((a, b) => b.price - a.price)
-      })
-    )
   }
 }

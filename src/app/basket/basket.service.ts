@@ -101,7 +101,7 @@ export class BasketService {
       price: item.price,
       quantity: 0,
       pictureUrl: item.pictureUrl,
-      brand: item.brand,
+      brand: item.productBrand,
       type: item.productType,
     };
   }
@@ -117,6 +117,6 @@ export class BasketService {
   }
 
   private isProduct(item: Product | BasketItem): item is Product {
-    return (item as Product).brand !== undefined;
+    return (item as Product).productBrand !== undefined;
   }
 }

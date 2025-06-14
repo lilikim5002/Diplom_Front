@@ -30,12 +30,11 @@
     <i class="fa fa-angle-left"></i> Корзина
   </button>
 
-  <button [disabled]="checkoutForm?.get('addressForm')?.invalid"
-    class="btn btn-primary"
-    cdkStepperNext
-  >
-    <!-- тут заказ отправить -->
-
-    Заказать <i class="fa fa-angle-right"></i>
-  </button>
+ <button
+        [disabled]="checkoutForm?.invalid"
+        class="btn btn-primary"
+        (click)="onSubmit()"
+      >
+        Заказать <i class="fa fa-angle-right"></i>
+      </button>
 </div>
